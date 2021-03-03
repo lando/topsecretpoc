@@ -1,5 +1,5 @@
 {
-  "name": "vite-electron-builder",
+  "name": "childish-gambino-poc",
   "private": true,
   "main": "main/index.cjs.js",
   "scripts": {
