@@ -34,7 +34,9 @@
   },
   "dependencies": {
     "electron-updater": "^4.3.8",
+    "inquirer": "^8.0.0",
     "vue": "^3.0.7",
-    "vue-router": "^4.0.4"
+    "vue-router": "^4.0.4",
+    "yargs": "^16.2.0"
   }
 }

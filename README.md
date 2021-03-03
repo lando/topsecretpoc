@@ -15,6 +15,10 @@ cd topsecretpoc
 yarn
 
 # Symlink the CLI into PATH
+# NOTE: destination may vary, use of sudo may be required
+ln -s `pwd`/bin/glover.js /usr/local/bin/glover
+# See the menu
+glover
 
 # Launch the GUI application (this will also launch the server)
 
