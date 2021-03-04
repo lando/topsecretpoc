@@ -33,3 +33,6 @@ glover start
 ## Open questions
 
 1. Do we want to use TypeScript? (it's the default in the `electron-vite` we are using)
+2. If we need to ask the server for the yargs commands, is that going to work ok?
+3. Using BIDI makes sense on how we can stream output to stdout but what about reading from stdin?
+4. How and where do we load plugins server side?

@@ -9,7 +9,7 @@
 /* GENERAL CLI FLOW (for purposes of testing our assumptions, Lando 4 flow may differ)
  *
  *   1. Bootstrap config for CLI (eg Lando server settings)
- *   2. Gather context (in Lando this would be "app" vs "global")
+ *   2. Gather context (in Lando this would be "app" vs "global"), do we need to know other config here eg Landofile names? get from server?
  *   3. Get raw user input eg command and options passed into the cli but not interactive questions
  *   4. Send context and raw user input to SERVER
        * Do we want to ping to ensure up first? throw an error if server is off? etc
@@ -25,6 +25,7 @@
  *
  * * Use of the -- seperator if you want explicit option separation, see: https://github.com/lando/lando/pull/2572
  * * Smart delegation of --help and --verbose by default
+ * * Some apps like platform.sh ones can have more than one cached menus per lando app
  *
  */
 
@@ -112,7 +113,6 @@ yargs.usage('Usage: glover <command> [args] [options]')
   .help(true)
   .option('verbose', verboseOptions)
   .version(false);
-
 
 
 // Loop through the tasks and add them to the CLI
