@@ -21,6 +21,9 @@ ln -s `pwd`/bin/glover.js /usr/local/bin/glover
 glover
 
 # Launch the GUI application (this will also launch the server)
+yarn watch
+
+# Launch the server separately
 
 # Run some fake commands
 glover start
@@ -36,3 +39,5 @@ glover start
 2. If we need to ask the server for the yargs commands, is that going to work ok?
 3. Using BIDI makes sense on how we can stream output to stdout but what about reading from stdin?
 4. How and where do we load plugins server side?
+5. How are we going to handle fast tooling handoff?
+6. Do we want the gui to launch the server into its own console?
