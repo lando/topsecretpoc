@@ -121,7 +121,7 @@ if (!gotTheLock) {
       if (code === 0) e.reply('server-stdout', `[landod] server exited with code ${code}`);
       else if (code > 0) e.reply('server-stderr', `[landod] server exited with code ${code}`);
       else if (signal) e.reply('server-stdout', `[landod] server terminated with ${signal}`);
-      else e.reply('server-err', `[landod] server exited and we honestly aren't sure why`);
+      else e.reply('server-err', '[landod] server exited and we honestly aren\'t sure why');
       e.reply('server-status', {on: false});
     });
   });

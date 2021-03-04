@@ -32,8 +32,6 @@
 'use strict';
 
 // MODULES
-const _ = require('lodash');
-const path = require('path');
 const parser = require('yargs-parser');
 const yargs = require('yargs');
 const { createLogger, format, transports } = require('winston');
@@ -49,9 +47,9 @@ const logLevels = {
 };
 
 // SERVER
-const LANDO_HOST = process.env.LANDO_HOST;
-const LANDO_PORT = process.env.LANDO_PORT;
-const LANDO_SOCKET = process.env.LANDO_SOCKET;
+// const LANDO_HOST = process.env.LANDO_HOST;
+// const LANDO_PORT = process.env.LANDO_PORT;
+// const LANDO_SOCKET = process.env.LANDO_SOCKET;
 
 // YARGS
 const parserConfig = {'populate--': true};

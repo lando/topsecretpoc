@@ -8,7 +8,7 @@
 
 'use strict';
 
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const http = require('http');
 
 const hostname = '127.0.0.1';

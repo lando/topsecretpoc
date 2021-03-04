@@ -27,13 +27,11 @@
   <button @click="toggleServer">
     turn server {{ serverOn ? 'off' : 'on' }}
   </button>
-
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from 'vue';
-import {useElectron} from '/@/use/electron'
-import http from 'https';
+import {defineComponent} from 'vue';
+import {useElectron} from '/@/use/electron';
 
 const {launchServer, killServer, pingServer, statusServer} = useElectron();
 

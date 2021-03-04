@@ -8,6 +8,7 @@
     "build": "node ./bin/build.js",
     "precompile": "cross-env MODE=production npm run build",
     "compile": "electron-builder build --config ./config/electron-builder.js",
+    "lint": "eslint --ext js,ts,vue bin config src",
     "pretest": "cross-env MODE=test npm run build",
     "test": "node ./tests/app.spec.js",
     "prewatch": "npm run buildEnvTypes",
