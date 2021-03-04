@@ -34,7 +34,10 @@ if (!gotTheLock) {
 
   async function createWindow() {
     mainWindow = new BrowserWindow({
+      width: 800,
+      height: 600,
       show: false,
+      resizable: false,
       webPreferences: {
         preload: join(__dirname, '../preload/index.cjs.js'),
         contextIsolation: env.MODE !== 'test',   // Spectron tests can't work with contextIsolation: true

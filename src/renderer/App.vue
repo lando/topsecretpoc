@@ -1,6 +1,6 @@
 <template>
   <img
-    alt="Vue logo"
+    alt="Lando logo"
     src="./assets/logo.png"
   >
   <app-navigation />
@@ -27,5 +27,8 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+img {
+  width: 250px;
 }
 </style>
