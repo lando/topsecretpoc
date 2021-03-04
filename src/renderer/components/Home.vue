@@ -21,12 +21,13 @@
   </p>
 
   <hr>
+  <p class="server-status">
+    The server is <code>{{ serverOn ? 'ON' : 'OFF' }}</code>.
+  </p>
   <button @click="toggleServer">
     turn server {{ serverOn ? 'off' : 'on' }}
   </button>
-  <p>
-    The server is <code>{{ serverOn ? 'ON' : 'OFF' }}</code>.
-  </p>
+
 </template>
 
 <script lang="ts">
@@ -67,5 +68,8 @@ export default defineComponent({
 <style scoped>
 a {
   color: #42b983;
+}
+p.server-status {
+  font-size: 24px;
 }
 </style>
