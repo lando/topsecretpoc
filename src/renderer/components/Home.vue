@@ -21,24 +21,44 @@
   </p>
 
   <hr>
-  <button @click="count++">
-    count is: {{ count }}
+  <button @click="toggleServer">
+    turn server {{ serverOn ? 'off' : 'on' }}
   </button>
   <p>
-    Edit
-    <code>renderer/components/Home.vue</code> to test hot module replacement.
+    The server is <code>{{ serverOn ? 'ON' : 'OFF' }}</code>.
   </p>
 </template>
 
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
+import {useElectron} from '/@/use/electron'
+import http from 'https';
+
+const {launchServer, killServer, pingServer, statusServer} = useElectron();
 
 export default defineComponent({
   name: 'HelloWorld',
-  setup() {
-    const count = ref(0);
-
-    return {count};
+  data() {
+    return {
+      serverOn: false,
+    };
+  },
+  mounted() {
+    this.checkServer();
+    statusServer((e, status) => {
+      this.serverOn = status.on;
+    });
+  },
+  methods: {
+    async checkServer() {
+      const response = await pingServer();
+      if (response.data === 'pong' && response.status === 200) this.serverOn = true;
+      else this.serverOn = false;
+    },
+    toggleServer() {
+      if (!this.serverOn) launchServer();
+      else killServer();
+    },
   },
 });
 </script>

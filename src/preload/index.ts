@@ -1,4 +1,5 @@
-import {ContextBridge, contextBridge} from 'electron';
+import {ContextBridge, contextBridge, ipcRenderer} from 'electron';
+import axios from 'axios';
 
 const apiKey = 'electron';
 
@@ -6,6 +7,14 @@ const apiKey = 'electron';
  * @see https://github.com/electron/electron/issues/21437#issuecomment-573522360
  */
 const api = {
+  consoleServer: () => {
+    ipcRenderer.on('server-stdout', (e, data) => console.log(data));
+    ipcRenderer.on('server-stderr', (e, data) => console.error(data));
+  },
+  statusServer: cb => ipcRenderer.on('server-status', cb),
+  killServer: () => ipcRenderer.send('server-kill'),
+  launchServer: () => ipcRenderer.send('server-launch'),
+  pingServer: async () => await axios.get('http://localhost:3720/ping'),
   versions: process.versions,
 } as const;
 

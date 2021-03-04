@@ -17,6 +17,7 @@ const port = 3720;
 const server = http.createServer((req, res) => {
   // Good Defaults
   res.setHeader('Content-Type', 'text/plain');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.statusCode = 200;
 
   // Basic ping/pong
@@ -36,5 +37,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`server running at http://${hostname}:${port}/`);
 });

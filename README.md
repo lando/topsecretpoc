@@ -23,7 +23,9 @@ glover
 # Launch the GUI application (this will also launch the server)
 yarn watch
 
-# Launch the server separately
+# Hit the server
+# NOTE: this is currently not the real server
+curl http://localhost:3720/ping
 
 # Run some fake commands
 glover start
