@@ -38,8 +38,25 @@ glover start
 ## Open questions
 
 1. Do we want to use TypeScript? (it's the default in the `electron-vite` we are using)
-2. If we need to ask the server for the yargs commands, is that going to work ok?
+
+> Leaning no.
+
+2. If we need to ask the server for the yargs commands/inquirer, is that going to work ok?
+
+> `JSON.stringify` omits JS functions so we cannot pass back entire YARG command modules, or presumably, other structured command data that includes functions, i think this will also be a problem for inquirer.
+
 3. Using BIDI makes sense on how we can stream output to stdout but what about reading from stdin?
+
+> Haven't looked into this yet.
+
 4. How and where do we load plugins server side?
+
+> When we boot the server? There might be different places where we do this for differnt kinds of things?
+
 5. How are we going to handle fast tooling handoff?
+
+> Might be easy to do this if we are generating our own command files.
+
 6. Do we want the gui to launch the server into its own console?
+
+> Seems like we can pipe the server stdout/stderr into the electron console and that works well.
